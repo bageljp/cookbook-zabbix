@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2015-07-08T09:35:16Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template custom URL</template>
+            <name>Template custom URL</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>URL</name>
+                </application>
+            </applications>
+            <items/>
+            <discovery_rules/>
+            <macros>
+                <macro>
+                    <macro>{$HEALTHCHECK_URI}</macro>
+                    <value>http://127.0.0.1/</value>
+                </macro>
+                <macro>
+                    <macro>{$TRRIGER_URL_DURATION}</macro>
+                    <value>#3</value>
+                </macro>
+            </macros>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+</zabbix_export>

@@ -1,0 +1,7 @@
+/var/log/zabbix/zabbix_server.log {
+    daily
+    rotate <%= node['zabbix']['agent']['log_rotate'] %>
+    dateext
+    missingok
+    create 0664 <%= node['zabbix']['user'] %> <%= node['zabbix']['group'] %>
+}

@@ -1,0 +1,5 @@
+<% if node['zabbix']['agent']['hostname'].empty? -%>
+export instance_id=$(wget -q -O - http://169.254.169.254/latest/meta-data/instance-id)
+export tag_name=$(aws ec2 --output text --region <%= node['zabbix']['agent']['region'] %> describe-tags --filters "Name=resource-id,Values=${instance_id}" "Name=key,Values=Name" --query "Tags[*].Value")
+echo "Hostname=${tag_name}" > /etc/zabbix/zabbix_agentd.d/hostname.conf
+<% end -%>
